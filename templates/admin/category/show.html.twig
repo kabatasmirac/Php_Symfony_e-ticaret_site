@@ -1,0 +1,64 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %}Kategori Listele!{% endblock %}
+
+{% block content %}
+    <br><br><br>
+    <!-- main content start-->
+    <div id="page-wrapper">
+        <div class="main-page">
+            <h2 class="title1">Kategori Listesi
+                <small><small><a href="{{ path('admin_category_new') }}" class="btn btn-warning">Yeni Kategori</a></small></small></h2>
+
+            <div class="bs-example widget-shadow" data-example-id="contextual-table">
+                <h4>Kategoriler:</h4>
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ category.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>ParendId</th>
+                        <td>{{ category.parendId }}</td>
+                    </tr>
+                    <tr>
+                        <th>UrunTitle</th>
+                        <td>{{ category.urunTitle }}</td>
+                    </tr>
+                    <tr>
+                        <th>Renk</th>
+                        <td>{{ category.renk }}</td>
+                    </tr>
+                    <tr>
+                        <th>Beden</th>
+                        <td>{{ category.beden }}</td>
+                    </tr>
+                    <tr>
+                        <th>Price</th>
+                        <td>{{ category.price }}</td>
+                    </tr>
+                    <tr>
+                        <th>Kategori</th>
+                        <td>{{ category.kategori }}</td>
+                    </tr>
+                    <tr>
+                        <th>Keywords</th>
+                        <td>{{ category.keywords }}</td>
+                    </tr>
+                    <tr>
+                        <th>Status</th>
+                        <td>{{ category.status }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <a href="{{ path('admin_category_index') }}" class="btn btn-info">Listeye Dön!</a>
+
+                <a href="{{ path('admin_category_edit', {'id': category.id}) }}" class="btn btn-primary">Düzenle</a>
+
+                {{ include('admin/category/_delete_form.html.twig') }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

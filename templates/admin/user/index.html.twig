@@ -1,0 +1,45 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %}Üye Listele!{% endblock %}
+
+{% block content %}
+    <br><br><br>
+    <!-- main content start-->
+    <div id="page-wrapper">
+        <div class="main-page">
+            <h2 class="title1">Üye Listesi
+                <small><small><a href="{{ path('admin_user_new') }}" class="btn btn-warning">Yeni Üye</a></small></small></h2>
+
+            <div class="bs-example widget-shadow" data-example-id="contextual-table">
+                <h4>Üyeler:</h4>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>İsim Soyisim</th>
+                        <th>Telefon Numarası</th>
+                        <th>E-Mail</th>
+                        <th>Adres</th>
+                        <th>Düzenle</th>
+                        <th>Sil</th>
+                    </tr>
+                    </thead>
+                    {% for user in users %}
+                        <thead>
+                    <tr>
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.longname }}</td>
+                        <td>{{ user.phone }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.address }}</td>
+                        <td><a href="{{ path ('admin_user_edit', {'id':user.id}) }}" class="btn btn-info">Düzenle</a></td>
+                        <td><a href="{{ path ('admin_user_delete', {'id':user.id}) }}" onclick="return confirm('Kayıt silinecek. Silmek istediğiinize emin misiniz?');" class="btn btn-danger">Sil</a></td>
+
+                    </tr>
+                        </thead>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

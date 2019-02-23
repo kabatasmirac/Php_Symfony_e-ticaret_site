@@ -1,0 +1,99 @@
+<div class="blank-page widget-shadow scroll" id="style-2 div1">
+    <p>
+    <div class="form-title">
+        <h4>Ürün Kayıt :</h4>
+    </div>
+    <div class="form-body">
+
+        <form data-toggle="validator" novalidate="true" method = "post">
+
+
+            <h4 class="title2">Horizontal Tabs:</h4>
+            <ul id="myTabs" class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#genel" role="tab" id="profile-tab" data-toggle="tab" aria-controls="genel" aria-expanded="true">Genel Bilgiler</a></li>
+                <li role="presentation" class=""><a href="#mail" role="tab" id="profile-tab" data-toggle="tab" aria-controls="mail" aria-expanded="true">E-mail Server</a></li>
+
+                <li role="presentation" class=""><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="false">Hakkımızda</a></li>
+                <li role="presentation" class=""><a href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile" aria-expanded="true">İletişim</a></li>
+
+            </ul>
+            <br><br><br>
+
+            <div id="myTabContent" class="tab-content scrollbar1" style="overflow: hidden; outline: currentcolor none medium;" tabindex="5001">
+                <div role="tabpanel" class="tab-pane fade" id="genel" aria-labelledby="home-tab">
+                    <p><div class="form-group">
+                        <input type="text" name="setting[title]" value="{{ setting.title }}" class="form-control" id="title" placeholder="Konu Başlığı" required="">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="setting[aciklama]" value="{{ setting.aciklama }}" class="form-control" id="aciklama" placeholder="Açıklama" required="">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="setting[keyword]" value="{{ setting.keyword }}" class="form-control" id="keyword" placeholder="Anahtar Kelimeler" required="">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="setting[firmname]" value="{{ setting.firmname }}" class="form-control" id="firmname" placeholder="Firma Bilgisi" required="">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="setting[contact]" value="{{ setting.contact }}" class="form-control" id="contact" placeholder="İletişim" required="">
+                    </div>
+                    </p>
+                </div>
+                <div role="tabpanel" class="tab-pane fade active in" id="mail" aria-labelledby="profile-tab">
+                    <p><div class="form-group">
+                        <input type="text" name="setting[smtpserver]" value="{{ setting.smtpserver }}" class="form-control" id="smtpserver" placeholder="smtpserver" required="">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="setting[smtpmail]" value="{{ setting.smtpmail }}" class="form-control" id="smtpmail" placeholder="smtpserver" required="">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="setting[smtppass]" value="{{ setting.smtppass }}" class="form-control" id="smtppass" placeholder="smtpserver" required="">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="setting[smtpport]" value="{{ setting.smtpport }}" class="form-control" id="smtpport" placeholder="smtpserver" required="">
+                    </div></p>
+                </div>
+                <div role="tabpanel" class="tab-pane fade active in" id="profile" aria-labelledby="profile-tab">
+                    <p><div class="form-group">
+                        <input type="text" name="setting[aboutus]" value="{{ setting.aboutus }}" class="form-control" id="aboutus" placeholder="Hakkımızda" required="">
+                    </div>
+
+                    </p>
+                </div>
+                <div role="tabpanel" class="tab-pane fade active in" id="home" aria-labelledby="profile-tab">
+                    <p><div class="form-group">
+                        <input type="text" name="setting[adres]" value="{{ setting.adres }}" class="form-control" id="adres" placeholder="Adres Bilgisi" required="">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="setting[fax]" value="{{ setting.fax }}" class="form-control" id="fax" placeholder="Fax" required="">
+                    </div>
+                    <div>
+                        <input type="text" name="setting[tel]" value="{{ setting.tel }}" class="form-control" id="tel" placeholder="Tel" required="">
+                    </div>
+
+
+                    <div class="form-group">
+                        <input type="text" name="setting[email]" value="{{ setting.email }}" class="form-control" id="email" placeholder="E-mail" required="">
+                    </div></p>
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary enable">Kaydet..</button>
+            </div>
+
+        </form>
+
+    </div>
+    </p>
+</div>
+

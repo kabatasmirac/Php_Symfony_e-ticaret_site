@@ -1,0 +1,56 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %}Ürün Detay!{% endblock %}
+
+{% block content %}
+<br><br><br>
+<!-- main content start-->
+<div id="page-wrapper">
+    <div class="main-page">
+        <h2 class="title1">Ürün Detayı
+            <small><small><a href="{{ path('admin_products_new') }}" class="btn btn-warning">Yeni Ürün</a></small></small></h2>
+        <div class="bs-example widget-shadow" data-example-id="contextual-table">
+
+            <table class="table">
+        <thead>
+            <tr>
+                <th>Image</th>
+
+                <th>İsim</th>
+                <th>Kod</th>
+                <th>Fiyat</th>
+                <th>Beden</th>
+                <th>Özellik</th>
+                <th>Renk</th>
+                <th>Adet</th>
+                <th>Görüntüle</th>
+                <th>Düzenle</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+            <tr>
+                <td><img src="{{ asset('admin') }}/uploads/images/{{ product.image }}" width="150px"></td>
+                <td>{{ product.isim }}</td>
+                <td>{{ product.code }}</td>
+                <td>{{ product.fiyat }} TL</td>
+                <td>{{ product.beden }}</td>
+                <td>{{ product.ozellik }}</td>
+                <td>{{ product.renk }}</td>
+                <td>{{ product.adet }}</td>
+                <td>
+                    <a href="{{ path('admin_products_show', {'id': product.id}) }}" class="btn btn-primary">görüntüle</a>
+                </td>
+                <td>
+                    <a href="{{ path('admin_products_edit', {'id': product.id}) }}" class="btn btn-warning">düzenle</a>
+                </td>
+            </tr>
+
+        {% endfor %}
+        </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %}Ayarlar!{% endblock %}
+
+{% block content %}
+<br><br><br>
+<!-- main content start-->
+<div id="page-wrapper">
+    <div class="main-page">
+        <h2 class="title1">Ayarlar</h2>
+        <div class="bs-example widget-shadow" data-example-id="contextual-table">
+
+            <table class="table">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Aciklama</th>
+                <th>Keyword</th>
+                <th>Firmname</th>
+                <th>Adres</th>
+                <th>Fax</th>
+                <th>Tel</th>
+                <th>Email</th>
+                <th>Smtpserver</th>
+                <th>Smtpmail</th>
+                <th>Smtppass</th>
+                <th>Smtpport</th>
+                <th>About_us</th>
+                <th>Contact</th>
+                <th>Referans</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for setting in settings %}
+            <tr>
+                <td>{{ setting.id }}</td>
+                <td>{{ setting.title }}</td>
+                <td>{{ setting.aciklama }}</td>
+                <td>{{ setting.keyword }}</td>
+                <td>{{ setting.firmname }}</td>
+                <td>{{ setting.adres }}</td>
+                <td>{{ setting.fax }}</td>
+                <td>{{ setting.tel }}</td>
+                <td>{{ setting.email }}</td>
+                <td>{{ setting.smtpserver }}</td>
+                <td>{{ setting.smtpmail }}</td>
+                <td>{{ setting.smtppass }}</td>
+                <td>{{ setting.smtpport }}</td>
+                <td>{{ setting.aboutUs }}</td>
+                <td>{{ setting.contact }}</td>
+                <td>{{ setting.referans }}</td>
+                <td>
+                    <a href="{{ path('admin_settings_show', {'id': setting.id}) }}">show</a>
+                    <a href="{{ path('admin_settings_edit', {'id': setting.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="17">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

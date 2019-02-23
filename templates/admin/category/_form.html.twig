@@ -1,0 +1,41 @@
+<div class="blank-page widget-shadow scroll" id="style-2 div1">
+    <p>
+    <div class="form-title">
+        <h4>Kategori Kayıt :</h4>
+    </div>
+    <div class="form-body">
+
+        <form data-toggle="validator" novalidate="true" method = "post">
+            <div class="form-group">
+                <input type="text" name="categories[parendId]" value="{{ category.parendId }}" class="form-control" id="parendId" placeholder="Üst Kategori" required="">
+            </div>
+            <div class="form-group">
+                <input type="text" name="categories[urunTitle]" value="{{ category.urunTitle }}" class="form-control" id="urunTitle" placeholder="Ürün Başlığı" required="">
+            </div>
+            <div class="form-group">
+                <input type="text" name="categories[renk]" value="{{ category.renk }}" class="form-control" id="Renk" placeholder="Renk Bilgisi" required="">
+            </div>
+            <div class="form-group">
+                <input type="text" name="categories[beden]" value="{{ category.beden }}" class="form-control" id="beden" placeholder="Beden Bilgisi" required="">
+            </div>
+            <div class="form-group">
+                <input type="text" name="categories[price]" value="{{ category.price }}" class="form-control" id="price" placeholder="Fiyat Bilgisi" required="">
+            </div>
+            <div class="form-group">
+                <input type="text" name="categories[kategori]" value="{{ category.kategori }}" class="form-control" id="kategori" placeholder="Kategori Bilgisi" required="">
+            </div>
+            <div class="form-group">
+                <input type="text" name="categories[keywords]" value="{{ category.keywords }}" class="form-control" id="keywords" placeholder="Anahtar Kelime Bilgisi" required="">
+            </div>
+            <div class="form-group">
+                <input type="text" name="categories[status]" value="{{ category.status }}" class="form-control" id="status" placeholder="Yayım Bilgisi" required="">
+            </div>
+
+
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary enable">Kaydet..</button>
+            </div></div>
+    </p>
+</div>
+</form>

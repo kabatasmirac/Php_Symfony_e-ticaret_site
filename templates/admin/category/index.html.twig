@@ -1,0 +1,57 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %}Kategori Detay!{% endblock %}
+
+{% block content %}
+    <br><br><br>
+    <!-- main content start-->
+    <div id="page-wrapper">
+        <div class="main-page">
+            <h2 class="title1">Kategori Detayı
+                <small><small><a href="{{ path('admin_category_new') }}" class="btn btn-warning">Yeni Kategori</a></small></small></h2>
+            <h4>Kategoriler:</h4>
+            <div class="bs-example widget-shadow" data-example-id="contextual-table">
+
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>ParendId</th>
+                        <th>UrunTitle</th>
+                        <th>Renk</th>
+                        <th>Beden</th>
+                        <th>Price</th>
+                        <th>Kategori</th>
+                        <th>Keywords</th>
+                        <th>Status</th>
+                        <th>Görüntüle</th>
+                        <th>Düzenle</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for category in categories %}
+                        <tr>
+                            <td>{{ category.id }}</td>
+                            <td>{{ category.parendId }}</td>
+                            <td>{{ category.urunTitle }}</td>
+                            <td>{{ category.renk }}</td>
+                            <td>{{ category.beden }}</td>
+                            <td>{{ category.price }}</td>
+                            <td>{{ category.kategori }}</td>
+                            <td>{{ category.keywords }}</td>
+                            <td>{{ category.status }}</td>
+                            <td>
+                                <a href="{{ path('admin_category_show', {'id': category.id}) }}" class="btn btn-primary">Göster</a>
+                            </td>
+                            <td>
+                                <a href="{{ path('admin_category_edit', {'id': category.id}) }}" class="btn btn-warning">Düzenle</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %}Ürün Ekleme!{% endblock %}
+
+{% block content %}
+    <br><br><br>
+    <!-- main content start-->
+    <div id="page-wrapper">
+        <div class="main-page">
+            <h2 class="title1">Ürün Ekleme:
+                </h2>
+
+            <div class="bs-example widget-shadow" data-example-id="contextual-table">
+
+                {{ include('admin/products/_form.html.twig') }}
+
+                <a href="{{ path('admin_products_index') }}">back to list</a>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

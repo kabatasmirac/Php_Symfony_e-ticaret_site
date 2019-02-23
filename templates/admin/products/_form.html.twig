@@ -1,0 +1,63 @@
+<div class="blank-page widget-shadow scroll" id="style-2 div1">
+    <p>
+    <div class="form-title">
+        <h4>Ürün Kayıt :</h4>
+    </div>
+    <div class="form-body">
+
+        <form data-toggle="validator" novalidate="true" method = "post">
+
+            <div class="form-group">
+                <input type="text" name="products[isim]" value="{{ products.isim }}" class="form-control" id="isim" placeholder="Ürün Başlığı" required="">
+            </div>
+            <div class="form-group">
+                <input type="text" name="products[image]" value="{{ products.image }}" class="form-control" id="image" placeholder="Ürün Görsel Linki" required="">
+            </div>
+            <div class="form-group">
+                <input type="text" name="products[code]" value="{{ products.code }}" class="form-control" id="code" placeholder="Kod Bilgisi" required="">
+            </div>
+            <div class="form-group">
+                <input type="text" name="products[renk]" value="{{ products.renk }}" class="form-control" id="Renk" placeholder="Renk Bilgisi" required="">
+            </div>
+            <div class="form-group">
+                Beden Seçiniz  :
+                <select name="products[beden]" class="form-control">
+                    <option value="XS" name="products[beden]">XS</option>
+                    <option value="S" name="products[beden]">S</option>
+                    <option value="M" name="products[beden]">M</option>
+                    <option value="L" name="products[beden]">L</option>
+                    <option value="XL" name="products[beden]">XL</option>
+                    <option value="Standart" name="products[beden]">Standart</option>
+                </select> </div>
+            <div class="form-group">
+                <input type="text" name="products[fiyat]" value="{{ products.fiyat }}" class="form-control" id="fiyat" placeholder="Fiyat Bilgisi" required="">  TL
+            </div>
+            <div class="form-group">
+                Kategori Seçiniz  :
+                <select name="products[category_id]" class="form-control">
+
+                    <option value="0" name="products[category_id]">Ana Kategori</option>
+                    {% for cat in catlist %}
+                        <option value="{{ cat.id }}" >{{ cat.urunTitle }}</option>
+                    {% endfor %}
+                </select> </div>
+
+
+            <div class="form-group">
+                <input type="text" name="products[ozellik]" value="{{ products.ozellik }}" class="form-control" id="ozellik" placeholder="Özellik" required="">
+            </div>
+            <div class="form-group">
+                <input type="text" name="products[adet]" value="{{ products.adet }}" class="form-control" id="adet" placeholder="Adet" required="">
+            </div>
+
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary enable">Kaydet..</button>
+            </div>
+
+        </form>
+
+    </div>
+    </p>
+</div>
+

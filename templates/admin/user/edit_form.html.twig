@@ -1,0 +1,55 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %}Üye Güncelleme!{% endblock %}
+
+{% block content %}
+    <br><br><br>
+    <!-- main content start-->
+    <div id="page-wrapper">
+        <div class="main-page">
+            <h2 class="title1">Üye Güncelleme
+
+                <div class="blank-page widget-shadow scroll" id="style-2 div1">
+                    <p>
+                    <div class="form-title">
+                        <h4>Üye Güncelle :</h4>
+                    </div>
+                    <div class="form-body">
+                        <form data-toggle="validator" novalidate="true" method = "post">
+                            <div class="form-group">
+                                <input type="text" name="users[longname]" value="{{ user.longname }}" class="form-control" id="inputName" placeholder="İsim-Soyisim" required="">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="users[phone]" value="{{ user.phone }}" class="form-control" id="inputPhone" placeholder="Telefon Numarası" required="">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="users[address]" value="{{ user.address }}" class="form-control" id="inputAdres" placeholder="Adres Bilgisi" required="">
+                            </div>
+                            <div class="form-group has-feedback">
+
+                                <span class="help-block with-errors">Lütfen geçerli bir email adresi giriniz...</span>
+                                <input type="email" name="users[email]" class="form-control" id="inputEmail" placeholder="Email" data-error="Bruh, that email address is invalid" required="">
+                                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+
+                            </div>
+                            <div class="form-group">
+                                <span class="help-block">En az 6 karakter parola giriniz..</span>
+                                <input type="password" name="users[pass]" data-toggle="validator" data-minlength="6" class="form-control" id="inputPassword" placeholder="Parola" required="">
+
+                            </div>
+                            <div class="form-group">
+                                <span class="help-block">Parolayı onaylayınız..</span>
+                                <input type="password" name="users[pass]" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Whoops, these don't match" placeholder="Parola Onayı" required="">
+                                <div class="help-block with-errors"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary enable">Güncelle..</button>
+                            </div>
+                        </form>
+                    </div>
+                    </p>
+                </div>
+        </div>
+    </div>
+{% endblock %}
